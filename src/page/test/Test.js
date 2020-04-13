@@ -34,7 +34,6 @@ export const Test = (props) => {
       y = y + (n + 1) * 2;
       output.push(y);
 
-      console.log(output);
     });
     setResult(output);
   };

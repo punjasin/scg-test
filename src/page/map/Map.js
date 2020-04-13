@@ -32,7 +32,6 @@ const styles = {
 };
 export const Map = (props) => {
   const {loadMap, maps: result = []} = props;
-  console.log(props);
   useEffect(() => {
     axios
       .get(
@@ -51,7 +50,6 @@ export const Map = (props) => {
         <Text>Food around BangSue</Text>
         <List>
           {result.map((item) => {
-            console.log(item);
             return (
               <ListItem thumbnail>
                 <Left>
