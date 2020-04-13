@@ -1,31 +1,67 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import React, {useState} from 'react';
+import {
+  Container,
+  Header,
+  Content,
+  Text,
+  Item,
+  Input,
+  Button,
+} from 'native-base';
+import _ from 'lodash';
 
-const styles = StyleSheet.create({
+import FooterComponent from '../../components/Footer';
+
+const styles = {
   container: {
-    flex: 1,
+    padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  space: {
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
+};
 export const Test = (props) => {
-  console.log(props);
+  const [x, setX] = useState('0');
+  const [result, setResult] = useState([3]);
+  const calculate = () => {
+    const output = [];
+    let y = 3;
+    output.push(y);
+    _.times(x, (n) => {
+      y = y + (n + 1) * 2;
+      output.push(y);
+
+      console.log(output);
+    });
+    setResult(output);
+  };
   return (
-    <View style={styles.container}>
-      <Text>Test Screen</Text>
-    </View>
+    <Container>
+      <Header>
+        <Text>Test Page</Text>
+      </Header>
+      <Content contentContainerStyle={styles.container}>
+        <Text>This is Test page</Text>
+        <Text style={styles.space}>
+          {x === '0' ? 'insert x number' : `result is ${result}`}
+        </Text>
+        <Item style={styles.space} rounded>
+          <Input
+            keyboardType="numeric"
+            onChangeText={(value) => {
+              setX(value.replace(/\D/g, ''));
+            }}
+            value={x}
+          />
+        </Item>
+        <Button block onPress={calculate}>
+          <Text>Calculate</Text>
+        </Button>
+      </Content>
+      <FooterComponent />
+    </Container>
   );
 };

@@ -1,9 +1,12 @@
-import {TEST_ACTION} from '../constants/actions';
+import {LOAD_MAP} from '../constants/actions';
 
-const test = (state = {}, action) => {
+const INIT_STATE = {
+  maps: [],
+};
+const test = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case TEST_ACTION: {
-      return action.payload;
+    case LOAD_MAP: {
+      return action.collection;
     }
     default:
       return state;

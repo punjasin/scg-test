@@ -13,6 +13,7 @@ import {Provider} from 'react-redux';
 import {Router, Scene, Stack} from 'react-native-router-flux';
 import TestContainer from './src/page/test/TestContainer';
 import {Landing} from './src/page/Landing';
+import MapContainer from './src/page/map/MapContainer';
 export const store = initStore();
 const Scenes = [
   {
@@ -24,6 +25,11 @@ const Scenes = [
     key: 'home',
     component: Landing,
     initial: true,
+  },
+  {
+    key: 'map',
+    component: MapContainer,
+    initial: false,
   },
 ];
 const App: () => React$Node = () => {

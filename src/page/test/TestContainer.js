@@ -1,13 +1,12 @@
 // @flow
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import {Test} from '../test/Test';
 
-const mapStateToProps = (state: Object) => {
+const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch: Function) => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 

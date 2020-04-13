@@ -29,6 +29,13 @@ export default () => {
           }}>
           <Icon name="ios-folder" />
         </Button>
+        <Button
+          active={currentScene === 'map'}
+          onPress={() => {
+            Actions.reset('map');
+          }}>
+          <Icon name="map" />
+        </Button>
       </FooterTab>
     </Footer>
   );
