@@ -12,14 +12,18 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.8",
     "lodash": "^4.17.15",
+    "native-base": "^2.13.12",
     "prettier": "^2.0.4",
     "react": "16.11.0",
     "react-native": "0.62.2",
+    "react-native-config": "^1.0.0",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-ionicons": "^5.0.0-rc",
     "react-native-reanimated": "^1.8.0",
     "react-native-router-flux": "^4.2.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.4.0",
+    "react-native-vector-icons": "^6.6.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"

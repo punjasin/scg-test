@@ -8,18 +8,37 @@
 
 import * as React from 'react';
 
-import {SafeAreaView, StatusBar} from 'react-native';
 import {initStore} from './src/util/configureStore';
 import {Provider} from 'react-redux';
 import {Router, Scene, Stack} from 'react-native-router-flux';
 import TestContainer from './src/page/test/TestContainer';
+import {Landing} from './src/page/Landing';
 export const store = initStore();
+const Scenes = [
+  {
+    key: 'test',
+    component: TestContainer,
+    initial: false,
+  },
+  {
+    key: 'home',
+    component: Landing,
+    initial: true,
+  },
+];
 const App: () => React$Node = () => {
   return (
     <Provider store={store}>
       <Router>
         <Stack key="root">
-          <Scene key="login" component={TestContainer} title="Test" initial />
+          {Scenes.map((item) => (
+            <Scene
+              key={item.key}
+              component={item.component}
+              hideNavBar={true}
+              initial={item.initial}
+            />
+          ))}
         </Stack>
       </Router>
     </Provider>

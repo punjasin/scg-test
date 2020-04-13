@@ -1,30 +1,18 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import React, {Component} from 'react';
+import {Container, Header, Content, Text} from 'native-base';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+import FooterComponent from '../components/Footer';
 
 export const Landing = (props) => {
   return (
-    <View style={styles.container}>
-      <Text>Landing Screen</Text>
-    </View>
+    <Container>
+      <Header>
+        <Text>Landing Page</Text>
+      </Header>
+      <Content>
+        <Text>This is landing page</Text>
+      </Content>
+      <FooterComponent />
+    </Container>
   );
 };
